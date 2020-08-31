@@ -1,0 +1,1 @@
+docker buil . -t debian_swig
