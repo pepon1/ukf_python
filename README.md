@@ -12,16 +12,16 @@ Building manually
 #Generate swig interface with:
 
 ```bash
-swig -python -c++ -Isrc helloworld.i
+swig -python -c++ -Isrc ukf.i
 ```
 
-#Look at generated wrapper in hw_wrap.c
+#Look at generated wrapper in ukf_wrap.c
 
 
 #Compile with:
 
 ```bash
 g++ -Isrc -fPIC -c $(pkg-config --cflags --libs python3)\
-         src/HelloWorld.cpp src/HelloWorld2.cpp helloworld_wrap.cxx
-g++ -shared -o _helloworld.so HelloWorld.o HelloWorld2.o helloworld_wrap.o
+         tools.cpp ukf.cpp ukf_wrap.cxx
+g++ -shared -o _ukf.so Tools.o UKF.o ukf_wrap.o
 ```
